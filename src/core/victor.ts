@@ -5,7 +5,7 @@ import '../style/app.css';
 let app = () => {
     return {
         // template: template,
-        template: require('./app.html'),
+        template: require('./core/app.html'),
 
         controller: 'VicCtrl',
         controllerAs: 'VicCtrl'

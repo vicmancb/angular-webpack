@@ -1,8 +1,8 @@
-import {module} from 'angular';
+import {module as ngMogule} from 'angular';
 import AppCtrl from './app.controller'
 
 
-import '../style/app.css';
+import './app.less';
 
 let app = () => {
     return {
@@ -12,10 +12,9 @@ let app = () => {
     }
 };
 
-
 const MODULE_NAME = 'app';
 
-module(MODULE_NAME, [])
+ngMogule(MODULE_NAME, [])
     .directive('app', app)
     .controller('AppCtrl', AppCtrl);
 

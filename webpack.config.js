@@ -6,6 +6,7 @@ var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+// var less = require("!style!css!less!./file.less");
 
 /**
  * Env
@@ -23,6 +24,7 @@ module.exports = function makeWebpackConfig() {
      */
     var config = {};
 
+
     /**
      * Entry
      * Reference: http://webpack.github.io/docs/configuration.html#entry
@@ -30,7 +32,7 @@ module.exports = function makeWebpackConfig() {
      * Karma will set this when it's a test build
      */
     config.entry = isTest ? {} : {
-        app: './src/app/app.ts'
+        app: './src/core/app/app.ts'
     };
 
     /**
@@ -107,7 +109,12 @@ module.exports = function makeWebpackConfig() {
             // Reference: https://github.com/webpack/style-loader
             // Use style-loader in development.
             loader: isTest ? 'null' : ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!postcss-loader')
-        }, {
+        },
+        {
+            test: /\.less$/,
+            loader: "style!css!less"
+        },
+        {
             // ASSET LOADER
             // Reference: https://github.com/webpack/file-loader
             // Copy png, jpg, jpeg, gif, svg, woff, woff2, ttf, eot files to output
