@@ -15,7 +15,6 @@ const MODULE_NAME = 'app';
 
 ngMogule(MODULE_NAME, components)
     .controller('AppCtrl', AppCtrl)
-     // .component('kfooter', footer)
     .component('app', appComponent);
 
 export default MODULE_NAME;
