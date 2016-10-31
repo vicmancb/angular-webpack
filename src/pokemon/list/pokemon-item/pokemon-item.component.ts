@@ -2,7 +2,6 @@
  * Created by vicman on 10/30/16.
  */
 import './pokemon-item.less'
-
 import controller from './pokemon-item.controller';
 
 const pokemonItem =  {

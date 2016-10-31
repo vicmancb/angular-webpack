@@ -6,7 +6,7 @@ import './footer.less';
 class controller {
     url : string;
     constructor() {
-        this.url = "hola";
+        this.url = "https://github.com/vicmancb";
     }
 }
 

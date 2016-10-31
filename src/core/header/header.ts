@@ -4,9 +4,5 @@
 import {module as ngMogule} from 'angular';
 import headerComponent from './header.component'
 
-const MODULE_NAME = 'app.header';
-
-ngMogule(MODULE_NAME,[])
-    .component('header', headerComponent);
-
-export default MODULE_NAME;
+export default ngMogule('app.header',[])
+    .component('header', headerComponent).name;

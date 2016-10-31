@@ -2,22 +2,40 @@ import {module as ngMogule} from 'angular';
 import 'angular-ui-router';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import AppCtrl from './app.controller'
-import appComponent from './app.component'
 
+// modules
 import footer from '../footer/footer';
 import header from '../header/header';
 import pokemon from '../../pokemon/pokemon';
 
+//api
 import pokeApi from '../../shared/api/pokemon/poke.api'
 
-const modules:Array<string> = [
+import AppCtrl from './app.controller'
+import appComponent from './app.component'
+
+/**************************************************/
+/*the next array definitions are the list of modules
+to load as dependencies of main app module*/
+/**************************************************/
+const libList : Array<string> = [
+    'ui.router'
+];
+
+const apiList : Array<string> = [
+    pokeApi
+];
+
+const modulesList:Array<string> = [
     footer,
     header,
     pokemon
 ];
+/************************************************/
 
-var dependencies = ['ui.router', pokeApi].concat(modules);
+let dependencies = libList
+                    .concat(apiList)
+                    .concat(modulesList);
 
 export default ngMogule('app', dependencies)
     .controller('AppCtrl', AppCtrl)

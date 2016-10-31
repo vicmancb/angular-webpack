@@ -4,9 +4,5 @@
 import {module as ngMogule} from 'angular';
 import footerComponent from './footer.component'
 
-const MODULE_NAME = 'app.footer';
-
-ngMogule(MODULE_NAME,[])
-    .component('footer', footerComponent);
-
-export default MODULE_NAME;
+export default ngMogule('app.footer',[])
+    .component('footer', footerComponent).name;

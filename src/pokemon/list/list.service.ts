@@ -5,13 +5,11 @@ import Pokemon from '../models/pokemon';
 import PokemonApi from '../../shared/api/pokemon/pokemon.service';
 
 export default class listService {
-    name: string;
     http: any;
     pokemonApi: PokemonApi;
 
     constructor($http: any, pokemonService: PokemonApi) {
         this.http = $http;
-        this.name = "hola";
         this.pokemonApi = pokemonService;
     }
 
