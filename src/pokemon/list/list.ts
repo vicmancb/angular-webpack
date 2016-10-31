@@ -6,7 +6,9 @@ import {module as ngMogule} from 'angular';
 import listComponent from './list.component';
 import listService from './list.service'
 
-export default ngMogule('app.pokemons.list',[])
+import pokemonItemModule from './pokemon-item/pokemon-item';
+
+export default ngMogule('app.pokemons.list',[pokemonItemModule])
     .component('listComponent', listComponent)
     .service('listService', listService)
     .config(function ($stateProvider:any) {

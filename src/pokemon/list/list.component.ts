@@ -2,19 +2,35 @@
  * Created by vicman on 10/28/16.
  */
 import './list.less';
+import Pokemon from '../models/pokemon';
 import listService from './list.service'
 
-
-
 class controller {
-    name : string;
-    listService: listService;
-    tal : any;
+    pokemonList: Pokemon[] = [];
+    search : string;
+    executeSearch : string;
+    listService : listService;
+
     static $inject = ['listService'];
-    constructor(listService:any) {
-        this.name = "hola";
-        this.tal = listService;
-        console.log(this.tal.getPokemonList());
+    constructor(listService:listService) {
+        this.search = '';
+        this.executeSearch = '';
+        this.listService = listService;
+        this.getPokemonList();
+    }
+
+    getPokemonList() {
+        this.listService.getPokemonList()
+            .then((pokemonList : any) => {
+                angular.forEach(pokemonList, (pokemon : Pokemon) => {
+                    pokemon.img = 'https://raw.githubusercontent.com/vicmancb/pokemon/master/'+ pokemon.id +'.png'
+                });
+                this.pokemonList = pokemonList;
+            });
+    }
+
+    find () : void {
+        this.executeSearch = this.search;
     }
 }
 
