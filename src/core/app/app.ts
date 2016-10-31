@@ -7,17 +7,17 @@ import appComponent from './app.component'
 
 import footer from '../footer/footer';
 import header from '../header/header';
-import pokemon from '../../pokemon/list/list';
+import pokemon from '../../pokemon/pokemon';
 
 import pokeApi from '../../shared/api/pokemon/poke.api'
 
-const components:Array<string> = [
+const modules:Array<string> = [
     footer,
     header,
     pokemon
 ];
 
-var dependencies = ['ui.router', pokeApi].concat(components);
+var dependencies = ['ui.router', pokeApi].concat(modules);
 
 export default ngMogule('app', dependencies)
     .controller('AppCtrl', AppCtrl)

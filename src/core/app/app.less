@@ -2,17 +2,29 @@
 @import "variables";
 body {
   background: @bg;
-  margin: 0;
+  margin-bottom: 100px;
+  color: #656565;
+  margin-top: 70px;
+}
+html {
+  position: relative;
+  min-height: 100%;
 }
 
 a {
   color: #03A9F4;
 }
 
-//main {
-//  padding: 1em;
-//  font-family: Arial, Helvetica, sans-serif;
-//  text-align: center;
-//  margin-top: 50px;
-//  display: block;
-//}
+main {
+  text-align: center;
+  .images{
+    padding: 30px 0;
+    .plus {
+      font-size: 100px;
+      color: #999;
+    }
+  }
+}
+ui-view {
+  padding-bottom: 20px;
+}
